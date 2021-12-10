@@ -1,6 +1,6 @@
 {
-  "name": "chrome-extension-react-typescript-auth0",
-  "description": "Starter boilerplate for a chrome extension MV3 with react, typescript and auth0",
+  "name": "Crypto Extractor",
+  "description": "Extract crypto data from services that don't offer an API and import to an external database.",
   "version": "1.0.0",
   "manifest_version": 3,
   "action": {
@@ -17,5 +17,22 @@
     "32": "/images/icon32.png",
     "48": "/images/icon48.png",
     "128": "/images/icon128.png"
-  }
+  },
+  "background": {
+    "service_worker": "/js/background.js"
+  },
+  "content_scripts": [{
+    "js": ["/js/contentScript.js"],
+    "matches": [ "https://platform.nexo.io/*", "https://wallet.uphold.com/*" ],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [
+    {
+      "resources": [ "/js/inject.js" ],
+      "matches": [ "https://platform.nexo.io/*", "https://wallet.uphold.com/*" ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
 }
