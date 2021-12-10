@@ -1,2 +1,2 @@
 # Crypto Extractor Chrome Extension
-Starter boilerplate for a chrome extension MV3 with react, typescript and auth0
+> Extract crypto data from services that don't offer an API and import to an external database
