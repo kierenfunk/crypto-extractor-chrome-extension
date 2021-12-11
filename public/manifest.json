@@ -23,13 +23,13 @@
   },
   "content_scripts": [{
     "js": ["/js/contentScript.js"],
-    "matches": [ "https://platform.nexo.io/*", "https://wallet.uphold.com/*" ],
+    "matches": [ "https://platform.nexo.io/*", "https://wallet.uphold.com/*", "https://app.wirexapp.com/*" , "https://app.youhodler.com/*", "https://www.coinbase.com/*", "https://exchange.gemini.com/*"],
     "run_at": "document_idle"
   }],
   "web_accessible_resources": [
     {
       "resources": [ "/js/inject.js" ],
-      "matches": [ "https://platform.nexo.io/*", "https://wallet.uphold.com/*" ]
+      "matches": [ "https://platform.nexo.io/*", "https://wallet.uphold.com/*", "https://app.wirexapp.com/*", "https://app.youhodler.com/*", "https://www.coinbase.com/*", "https://exchange.gemini.com/*" ]
     }
   ],
   "permissions": [
